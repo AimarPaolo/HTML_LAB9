@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Esercizio 9.5</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Paolo Aimar">
+        <script>
+            function validateForm(f1){
+                let nome = document.getElementById(f1).nome.value;
+                let cognome = document.getElementById(f1).cognome.value;
+                if(nome != "" && cognome != ""){
+                    regexp_nome_cognome = /^[A-Z][a-z]{0,29}$/;
+                    if(regexp_nome_cognome.test(nome)){
+                        if(regexp_nome_cognome.test(cognome)){
+                            window.alert("i valori che sono stati inseriti sono corretti");
+                            return true;
+                        }else{
+                            window.alert("il cognome inserito non è corretto");
+                            return false;
+                        }
+                    }else{
+                        window.alert("il nome inserito non è corretto!");
+                        return false;
+                    }
+                }else{
+                    window.alert("inserire qualcosa nel campo nome o cognome");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="LAB9_5.php" method="GET" id="form1" name="form1" onsubmit="return validateForm('form1');">
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" maxlength="30" id="nome" name="nome">
+            </div>
+            <div>
+                <label for="cognome">Cognome: </label>
+                <input type="text" maxlength="30" id="cognome" name="cognome">
+            </div>
+            <div>
+                <input type="submit" name="consegna" id="consegna">
+                <input type="reset" name="clear" id="clear" value="cancella">
+            </div>
+        </form>
+    </body>
+</html>
