@@ -1,0 +1,7 @@
+In generale, nella maggior parte dei casi, non è possibile visualizzare i cookie di altri siti web (ed è una cosa buona dal punto di vista della sicurezza). 
+Ciò è dovuto a come sono stati impostati i parametri "path" e "domain" della funzione setcookie().
+Path indica il percorso sul server per il quale il cookie sarà valido e che è stato creato proprio per questo scopo, per evitare che una pagina contenuta in un determinato percorso possa leggere i cookie appartenenti ad un altro.
+Si noti infatti che, impostando nell'esercizio 9.2a il path default "/" sarà possibile visualizzare nella tabella il cookie "Country".
+Se al contrario, specifichiamo il path specifico "/lab9_2a.php", il cookie non sarà più visualizzabile al di fuori della pagina stessa. 
+Domain indica appunto il dominio di validità del cookie, per cui il cookie sarà accessibile soltanto a quello specifico dominio (es libero.it) e noi non potremo visualizzarlo. 
+Risulta possibile verificare quali siano i cookie presenti nel browser cercando i cookie nei settaggi del browser (ad esempio in chrome sono presenti alla URI 'chrome://settings/siteData?search=cookie'). In generale, saranno molti di più i cookie memorizzati nel web agent rispetto a quelli visualizzati da una pagina del server... 
